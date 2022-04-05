@@ -15,7 +15,7 @@ const getGameData = async (gameId) => {
     result.json().then(data => { console.log(data.result) })
 }
 
-const initializeGame = () => {
+const initializeGame = () => new Promise((resolve, reject) => {
   console.log('game found');
   fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
     method: 'POST',
@@ -24,16 +24,16 @@ const initializeGame = () => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      "name": "TadesseAlemayehu learBoard"
+      "name": "TadesseAlemayehu leaderBoard"
     })
   }).then(res => {
     if (res.ok) {
       res.json().then(data => {
         const gameId = data.result.replaceAll('Game with ID:', "").replaceAll('added.', "").trim();
         console.log('game created with: ' + gameId);
-        getGameData(gameId);
+        resolve(gameId);
       });
     }
-  }).catch(error => { console.log(error, 'fetch fail') });
-}
+  }).catch(error => { reject(error) });
+});
 export { getGameData, initializeGame };

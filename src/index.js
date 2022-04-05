@@ -3,4 +3,4 @@ import createInitialDom from './modules/creatDom.js';
 import { getGameData, initializeGame } from './modules/API.js'
 
 createInitialDom();
-initializeGame();
+initializeGame().then(gameId => getGameData(gameId), (error => console.log(error)));;
