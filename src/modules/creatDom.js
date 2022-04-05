@@ -52,7 +52,7 @@ const initialPageContent = `    <div id="page-container">
         <h1>Add your score</h1>
         <form action="#" method="post" id="add-score">
           <input type="text" placeholder="Yor name" />
-          <input type="text" placeholder="Yor score" />
+          <input type="number" placeholder="Yor score" />
           <button type="submit" class="add-score">Submit</button>
         </form>
       </section>
