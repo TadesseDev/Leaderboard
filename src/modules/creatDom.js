@@ -1,3 +1,5 @@
+
+import * as events from './domEvents.js';
 const initialPageContent = `    <div id="page-container">
       <h1>LeaderBoard</h1>
       <section id="left">
@@ -48,7 +50,7 @@ const initialPageContent = `    <div id="page-container">
       </section>
       <section id="right">
         <h1>Add your score</h1>
-        <form action="#" method="post">
+        <form action="#" method="post" id="add-score">
           <input type="text" placeholder="Yor name" />
           <input type="text" placeholder="Yor score" />
           <button type="submit" class="add-score">Submit</button>
@@ -58,6 +60,13 @@ const initialPageContent = `    <div id="page-container">
 const createInitialDom = () => {
   document.body.innerHTML = '';
   document.body.insertAdjacentHTML('beforebegin', initialPageContent);
+  return Promise.resolve(true);
 };
+
+createInitialDom().then(domReady => {
+  if (domReady) {
+    events.addFromEvent();
+  }
+});
 
 export default createInitialDom;
