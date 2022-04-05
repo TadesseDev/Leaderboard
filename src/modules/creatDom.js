@@ -1,13 +1,10 @@
-const leadBoard = document.createElement('div');
-leadBoard.setAttribute('id', 'lead-board-container');
-
 const initialPageContent = `    <div id="page-container">
       <h1>LeaderBoard</h1>
       <section id="left">
-        <div class="recent-score">
-          <h1>Recent score</h1>
+        <h1 class="recent-score">
+          Recent score
           <button type="submit" id="referesh">Refresh</button>
-        </div>
+        </h1>
         <div id="score-list">
           <ul>
             <li>
@@ -57,10 +54,9 @@ const initialPageContent = `    <div id="page-container">
           <button type="submit" class="add-score">Submit</button>
         </form>
       </section>
-    </div>`
+    </div>`;
 const createInitialDom = () => {
-  document.body.insertAdjacentHTML("beforebegin", initialPageContent);
-  console.log('function imported');
-}
+  document.body.insertAdjacentHTML('beforebegin', initialPageContent);
+};
 
-export { createInitialDom }; 
+export default createInitialDom;

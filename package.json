@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "watch": "webpack --watch",
-    "start": "webpack serve --open"
+    "start": "webpack serve --open",
+    "fix-style": "npx stylelint \"**/*.{css,scss}\" --fix",
+    "fix-script":"npx eslint . --fix",
+    "fix-hint":"npx hint ."
   },
   "repository": {
     "type": "git",

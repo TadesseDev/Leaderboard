@@ -4,60 +4,62 @@ body {
   padding: 0;
 }
 
-ul{
+ul {
   list-style: none;
 }
 
 #page-container {
   margin: auto;
-  width: max-content;
   display: grid;
   grid-template-columns: auto auto;
   grid-template-areas: 'title title';
-      width: 100%;
-      max-width: 500px;
-
+  width: 100%;
+  max-width: 500px;
 }
 
-#page-container h1{
+#page-container h1 {
   grid-area: title;
 }
-.recent-score{
+
+.recent-score {
   display: flex;
-  align-items:center;
+  align-items: center;
   gap: 10px;
-  
 }
 
-#right{
+#right {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: flex-end;
 }
 
-#right form{
+#right form {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;gap: 
-  10px;
+  align-items: flex-end;
+  gap: 10px;
 }
 
-#recent-score{display: flex;
-align-items: center;}
+#recent-score {
+  display: flex;
+  align-items: center;
+}
 
-#score-list ul{
+#score-list ul {
   padding: 0;
   border: 2px solid black;
 }
 
-#score-list li:nth-child(even){
-background-color: silver;
+#score-list li:nth-child(even) {
+  background-color: silver;
 }
+
 #score-list li:nth-child(odd) {
   background-color: rgb(241, 241, 241);
 }
-#score-list li p{
+
+#score-list li p {
   margin: 0;
   padding: 5px;
 }
