@@ -5,7 +5,7 @@ const initialPageContent = `    <div id="page-container">
       <section id="left">
         <h1 class="recent-score">
           Recent score
-          <button type="submit" id="referesh">Refresh</button>
+          <button type="submit" id="refresh">Refresh</button>
         </h1>
         <div id="score-list">
           <ul>
@@ -28,11 +28,6 @@ const createInitialDom = () => {
   return Promise.resolve(true);
 };
 
-createInitialDom().then(domReady => {
-  if (domReady) {
-    events.addFromEvent();
-  }
-});
 
 const createScoreTile = score => {
   const li = document.createElement('li');
@@ -51,9 +46,16 @@ const updateDomWithScore = scores => {
     const newScore = createScoreTile(score);
     scoreListContainer.appendChild(newScore)
   });
-  if (scores.length < 1) {
+  if (scoreListContainer.childNodes.length < 1) {
     scoreListContainer.innerHTML = "<h1> you have no registered game yet</h1>";
   }
 }
+
+createInitialDom().then(domReady => {
+  if (domReady) {
+    events.addFromEvent();
+    events.addRefreshEvent(updateDomWithScore);
+  }
+});
 
 export { createInitialDom, updateDomWithScore };

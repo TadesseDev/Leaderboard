@@ -36,7 +36,6 @@ const initializeGame = () => new Promise((resolve, reject) => {
       res.json().then(data => {
         const gameId = data.result.replaceAll('Game with ID:', "").replaceAll('added.', "").trim();
         setGameId(gameId);
-        console.log('game created with: ' + GAME_ID);
         localStorage.setItem('savedGame', String(GAME_ID));
         resolve(GAME_ID);
       });
