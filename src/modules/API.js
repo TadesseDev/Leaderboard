@@ -10,7 +10,7 @@ const getGameData = async (gameId) => {
   if (result.ok) {
     console.log('game fatch with: ' + gameId);
     const data = await result.json();
-    console.log(data.result);
+    return data;
   }
   else
     result.json().then(data => { console.log(data.result) })

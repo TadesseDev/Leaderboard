@@ -9,42 +9,7 @@ const initialPageContent = `    <div id="page-container">
         </h1>
         <div id="score-list">
           <ul>
-            <li>
-              <p>
-                <span class="name">Name: </span> <span class="number">100</span>
-              </p>
-            </li>
-            <li>
-              <p>
-                <span class="name">Name: </span> <span class="number">20</span>
-              </p>
-            </li>
-            <li>
-              <p>
-                <span class="name">Name: </span> <span class="number">50</span>
-              </p>
-            </li>
-            <li>
-              <p>
-                <span class="name">Name: </span> <span class="number">78</span>
-              </p>
-            </li>
-            <li>
-              <p>
-                <span class="name">Name: </span>
-                <span class="number">12.5</span>
-              </p>
-            </li>
-            <li>
-              <p>
-                <span class="name">Name: </span> <span class="number">77</span>
-              </p>
-            </li>
-            <li>
-              <p>
-                <span class="name">Name: </span> <span class="number">42</span>
-              </p>
-            </li>
+          <h1> loading user data</h1>
           </ul>
         </div>
       </section>
@@ -69,4 +34,26 @@ createInitialDom().then(domReady => {
   }
 });
 
-export default createInitialDom;
+const createScoreTile = score => {
+  const li = document.createElement('li');
+  li.innerHTML = ` 
+              <p>
+                <span class="name">${score.user}: </span> <span class="number">${score.score}</span>
+              </p>
+            `;
+  return li;
+}
+
+const updateDomWithScore = scores => {
+  const scoreListContainer = document.getElementById('score-list').getElementsByTagName('ul')[0];
+  scoreListContainer.innerHTML = "";
+  scores.forEach(score => {
+    const newScore = createScoreTile(score);
+    scoreListContainer.appendChild(newScore)
+  });
+  if (scores.length < 1) {
+    scoreListContainer.innerHTML = "<h1> you have no registered game yet</h1>";
+  }
+}
+
+export { createInitialDom, updateDomWithScore };
