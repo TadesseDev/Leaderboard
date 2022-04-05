@@ -1,5 +1,5 @@
-
 import * as events from './domEvents.js';
+
 const initialPageContent = `    <div id="page-container">
       <h1>LeaderBoard</h1>
       <section id="left">
@@ -28,8 +28,7 @@ const createInitialDom = () => {
   return Promise.resolve(true);
 };
 
-
-const createScoreTile = score => {
+const createScoreTile = (score) => {
   const li = document.createElement('li');
   li.innerHTML = ` 
               <p>
@@ -37,23 +36,23 @@ const createScoreTile = score => {
               </p>
             `;
   return li;
-}
+};
 
-const updateDomWithScore = scores => {
+const updateDomWithScore = (scores) => {
   const scoreListContainer = document.getElementById('score-list').getElementsByTagName('ul')[0];
-  scoreListContainer.innerHTML = "";
-  scores.forEach(score => {
+  scoreListContainer.innerHTML = '';
+  scores.forEach((score) => {
     const newScore = createScoreTile(score);
-    scoreListContainer.appendChild(newScore)
+    scoreListContainer.appendChild(newScore);
   });
   if (scoreListContainer.childNodes.length < 1) {
-    scoreListContainer.innerHTML = "<h1> you have no registered game yet</h1>";
+    scoreListContainer.innerHTML = '<h1> you have no registered game yet</h1>';
   }
-}
+};
 
-createInitialDom().then(domReady => {
+createInitialDom().then((domReady) => {
   if (domReady) {
-    events.addFromEvent();
+    events.addFromEvent(updateDomWithScore);
     events.addRefreshEvent(updateDomWithScore);
   }
 });
