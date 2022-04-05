@@ -1,4 +1,4 @@
-# WM-Website-Development
+# Leaderboard
 
 > This is Leaderboard project.
 
@@ -17,10 +17,10 @@
 
 ## Getting Started
 
-1. Open [main branch](https://github.com/Tadesse-Alemayehu/To-Do-list)
+1. Open [main branch](https://github.com/Tadesse-Alemayehu/Leaderboard)
 2. Open VSCode or terminal and navigate to the folder where you would like to clone the project.
 3. Type "pwd" to see your working directory.
-4. [clone repository](git@github.com:Tadesse-Alemayehu/To-Do-list)(git clone "branch-link")
+4. [clone repository](https://github.com/Tadesse-Alemayehu/Leaderboard)(git clone "branch-link")
 5. Run "nom install" to install required packages
 6. run "npm start" to start the website on local server
 7. Enjoy 😎
