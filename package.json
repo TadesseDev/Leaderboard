@@ -21,7 +21,12 @@
   },
   "homepage": "https://github.com/Tadesse-Alemayehu/Leaderboard#readme",
   "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.4",
+    "babel-preset-es2015": "^6.24.1",
     "css-loader": "^6.7.1",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
