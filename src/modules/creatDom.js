@@ -56,7 +56,7 @@ const initialPageContent = `    <div id="page-container">
       </section>
     </div>`;
 const createInitialDom = () => {
-  document.body.innerHTML = "";
+  document.body.innerHTML = '';
   document.body.insertAdjacentHTML('beforebegin', initialPageContent);
 };
 
