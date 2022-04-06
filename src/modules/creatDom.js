@@ -1,4 +1,4 @@
-import * as events from './domEvents.js';
+import * as events from './domEvents';
 
 const initialPageContent = `    <div id="page-container">
       <h1>LeaderBoard</h1>
@@ -23,12 +23,12 @@ const initialPageContent = `    <div id="page-container">
       </section>
     </div>`;
 const createInitialDom = () => {
-  document.body.innerHTML = '';
+  // document.body.innerHTML = '';
   document.body.insertAdjacentHTML('beforebegin', initialPageContent);
   return Promise.resolve(true);
 };
 
-const createScoreTile = score => {
+const createScoreTile = (score) => {
   const li = document.createElement('li');
   li.innerHTML = ` 
               <p>
@@ -38,7 +38,7 @@ const createScoreTile = score => {
   return li;
 };
 
-const updateDomWithScore = scores => {
+const updateDomWithScore = (scores) => {
   const scoreListContainer = document.getElementById('score-list').getElementsByTagName('ul')[0];
   scoreListContainer.innerHTML = '';
   scores.forEach((score) => {
@@ -50,7 +50,7 @@ const updateDomWithScore = scores => {
   }
 };
 
-createInitialDom().then(domReady => {
+createInitialDom().then((domReady) => {
   if (domReady) {
     events.addNewScoreEvent(updateDomWithScore);
     events.addRefreshEvent(updateDomWithScore);

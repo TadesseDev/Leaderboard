@@ -1,7 +1,6 @@
 import './main.css';
-import { updateDomWithScore } from './modules/creatDom.js';
-import { getGameData } from './modules/API.js';
+import { updateDomWithScore } from './modules/creatDom';
+import { getGameData } from './modules/API';
 
-
-getGameData().then((data) => { console.log(data); updateDomWithScore(data.result) })
-  .catch(error => console.log(error));
+getGameData().then((data) => { console.log(data); updateDomWithScore(data.result); })
+  .catch((error) => console.log(error));

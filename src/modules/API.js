@@ -1,27 +1,26 @@
-import { GAME_ID, getFetchUrl, getPostUrl } from './GLOBALS.js';
+import { GAME_ID, getFetchUrl, getPostUrl } from './GLOBALS';
 
 const getGameData = async () => {
   try {
     const result = await fetch(
       getFetchUrl(GAME_ID), {
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
       },
-    },
     );
     if (result.ok) {
       const data = await result.json();
       return data;
     }
-    else
-      return { result: [] };
+    return { result: [] };
   } catch (error) {
     console.log('fant featch data', error);
     return { result: [] };
   }
 };
-const saveNewScore = data => {
+const saveNewScore = (data) => {
   fetch(getPostUrl(GAME_ID), {
     method: 'POST',
     mode: 'cors',

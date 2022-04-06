@@ -1,4 +1,4 @@
-import { getGameData, saveNewScore } from './API.js';
+import { getGameData, saveNewScore } from './API';
 
 // set add new scor form event
 const addNewScoreEvent = () => {
