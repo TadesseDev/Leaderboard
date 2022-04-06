@@ -1,10 +1,10 @@
 import * as events from './domEvents';
 // body content as the template loaded
 const initialPageContent = `    <div id="page-container">
-      <h1>LeaderBoard</h1>
+      <h1>Leader Board</h1>
       <section id="left">
         <h1 class="recent-score">
-          Recent score
+          Recent scores
           <button type="submit" id="refresh"><span class="count">0 </span><span class="icon"><span></button>
         </h1>
         <div id="score-list">
