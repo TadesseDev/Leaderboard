@@ -1,38 +1,45 @@
-html,
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');html,
 body {
   border: 0;
   padding: 0;
+font-family: 'Source Code Pro',
+monospace;
 }
 
 ul {
   list-style: none;
 }
-
+$light: #e1aff5;
+$light2: #cf7bf1;
+$dark: #580379;
+$gradient: linear-gradient(135deg, $dark 0%, $light2 48%, $dark 100%);
 #page-container {
-  margin: auto;
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-areas: 'title title';
-  width: 100%;
-  max-width: 500px;
-
-  h1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 10px;
+  min-height: 90vh;
+ >  h1 {
     grid-area: title;
+    width: 100%;
+    background-color: silver;
+    margin: 0;
+    padding: 2.5vw;
+    height: max-content;
+    background: rgb(88, 3, 121);
+    background: $gradient;
+    color: $light;
+    box-shadow: 0 10px 10px silver;
   }
 }
 
-.recent-score {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
 #right {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: flex-end;
-
+  align-self: center;
   #add-score {
     display: flex;
     flex-direction: column;
@@ -41,23 +48,59 @@ ul {
   }
 }
 
-#recent-score {
-  display: flex;
-  align-items: center;
+
+#left{
+  background-color: white;
+  border: 2px solid $dark;
+  width: 50%;
+  max-width: 500px;
+  border-radius: 15px;
+  padding-top: 10px;
+  height: max-content;
+  min-height: 40vh;
+  max-height: 70vh;
+  overflow: scroll;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .recent-score {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 5px solid $dark;
+    margin: 0;
+    padding: 20px 10px;
+    button{
+      border: none;
+      outline: none;
+      font-size: 1.2rem;
+      padding: 5px 15px;
+      background: $dark;
+      color: $light;
+    }
+  }
 }
 
 #score-list {
   ul {
     padding: 0;
-    border: 2px solid black;
+    margin: 10px 0 0 0;
+    li{
+      font-size: 1.1rem;
+    }
   }
 
   li:nth-child(even) {
-    background-color: silver;
+    background-color: $dark;
+    color: $light;
   }
 
   li:nth-child(odd) {
-    background-color: rgb(241, 241, 241);
+    background-color: $light2;
+  color: white;
   }
 
   li p {
