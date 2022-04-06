@@ -23,7 +23,7 @@ const addRefreshEvent = (updateDomWithScore) => {
     e.preventDefault();
     const scoreList = document.getElementById('score-list');
     const scoreListContainer = scoreList.getElementsByTagName('ul')[0];
-    scoreListContainer.innerHTML = "";
+    scoreListContainer.innerHTML = '';
     scoreList.classList.add('loading');
     getGameData('tHhRUwU9PhkQBWkh4fwm')
       .then((data) => updateDomWithScore(data.result))

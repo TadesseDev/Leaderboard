@@ -45,7 +45,7 @@ const updateDomWithScore = (scores) => {
   const scoreList = document.getElementById('score-list');
   const scoreListContainer = scoreList.getElementsByTagName('ul')[0];
   const count = document.getElementsByClassName('count')[0];
-  count.innerHTML = scores.length + " ";
+  count.innerHTML = `${scores.length} `;
   scoreList.classList.remove('loading');
   scores.forEach((score) => {
     const newScore = createScoreTile(score);
