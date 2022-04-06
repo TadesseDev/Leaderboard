@@ -3,6 +3,7 @@
 > This is Leaderboard project.
 
 # Screenshot's
+![leader board](https://user-images.githubusercontent.com/69077061/162072545-b8929b41-02bd-400b-a05d-07ace1a1fbe4.PNG)
 
 ## Built With
 
@@ -13,7 +14,7 @@
 
 ## Live Demo
 
-[coming soon]() 🙂
+[Go Live](https://tadesse-alemayehu.github.io/Leaderboard/) 🙂
 
 ## Getting Started
 
