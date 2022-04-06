@@ -21,6 +21,10 @@ const addRefreshEvent = (updateDomWithScore) => {
   const refresh = document.getElementById('refresh');
   refresh.addEventListener('click', (e) => {
     e.preventDefault();
+    const scoreList = document.getElementById('score-list');
+    const scoreListContainer = scoreList.getElementsByTagName('ul')[0];
+    scoreListContainer.innerHTML = '';
+    scoreList.classList.add('loading');
     getGameData('tHhRUwU9PhkQBWkh4fwm')
       .then((data) => updateDomWithScore(data.result))
       .catch((error) => { console.log(error); });
