@@ -52,7 +52,7 @@ const updateDomWithScore = (scores) => {
 
 createInitialDom().then((domReady) => {
   if (domReady) {
-    events.addFromEvent(updateDomWithScore);
+    events.addNewScoreEvent(updateDomWithScore);
     events.addRefreshEvent(updateDomWithScore);
   }
 });

@@ -1,7 +1,6 @@
-import { getGameId } from './GLOBALS';
 import { getGameData, saveNewScore } from './API.js';
 
-const addFromEvent = () => {
+const addNewScoreEvent = () => {
   const addNewScore = document.getElementById('add-score');
   addNewScore.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -25,4 +24,4 @@ const addRefreshEvent = (updateDomWithScore) => {
       .catch((error) => { console.log(error); });
   });
 };
-export { addFromEvent, addRefreshEvent };
+export { addNewScoreEvent, addRefreshEvent };
