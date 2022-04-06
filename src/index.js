@@ -1,4 +1,4 @@
-import './main.css';
+import './main.scss';
 import { updateDomWithScore } from './modules/creatDom';
 import { getGameData } from './modules/API';
 
