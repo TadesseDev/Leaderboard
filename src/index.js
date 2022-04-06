@@ -3,5 +3,7 @@ import { updateDomWithScore } from './modules/creatDom.js';
 import { getGameData, initializeGame } from './modules/API.js';
 
 initializeGame()
-  .then((gameId) => getGameData(gameId), ((error) => console.log(error)))
-  .then((data) => updateDomWithScore(data.result));
+  .then((gameId) =>
+    getGameData(gameId)
+    , ((error) => console.log(error)))
+  .then((data) => { console.log(data); updateDomWithScore(data.result) });

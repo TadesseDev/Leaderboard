@@ -4,15 +4,15 @@ const getGameData = async (gameId = getGameId()) => {
   try {
     const result = await fetch(
       getUrl(gameId), {
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
       },
+    },
     );
     if (result.ok) {
       console.log(`game fatch withhh: ${getUrl(gameId)
-      }`);
+        }`);
       const data = await result.json();
       return data;
     }
