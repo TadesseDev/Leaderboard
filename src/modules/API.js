@@ -21,7 +21,7 @@ const getGameData = async () => {
     return { result: [] };
   }
 };
-const saveNewScore = async (data) => {
+const saveNewScore = data => {
   fetch(getPostUrl(GAME_ID), {
     method: 'POST',
     mode: 'cors',

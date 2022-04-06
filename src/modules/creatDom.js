@@ -28,7 +28,7 @@ const createInitialDom = () => {
   return Promise.resolve(true);
 };
 
-const createScoreTile = (score) => {
+const createScoreTile = score => {
   const li = document.createElement('li');
   li.innerHTML = ` 
               <p>
@@ -38,7 +38,7 @@ const createScoreTile = (score) => {
   return li;
 };
 
-const updateDomWithScore = (scores) => {
+const updateDomWithScore = scores => {
   const scoreListContainer = document.getElementById('score-list').getElementsByTagName('ul')[0];
   scoreListContainer.innerHTML = '';
   scores.forEach((score) => {
@@ -50,7 +50,7 @@ const updateDomWithScore = (scores) => {
   }
 };
 
-createInitialDom().then((domReady) => {
+createInitialDom().then(domReady => {
   if (domReady) {
     events.addNewScoreEvent(updateDomWithScore);
     events.addRefreshEvent(updateDomWithScore);
