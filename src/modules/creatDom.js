@@ -1,12 +1,11 @@
 import * as events from './domEvents';
-
 // body content as the template loaded
 const initialPageContent = `    <div id="page-container">
       <h1>LeaderBoard</h1>
       <section id="left">
         <h1 class="recent-score">
           Recent score
-          <button type="submit" id="refresh"><span class="count">12 </span><span class="icon"><span></button>
+          <button type="submit" id="refresh"><span class="count">0 </span><span class="icon"><span></button>
         </h1>
         <div id="score-list">
           <ul>
@@ -41,6 +40,9 @@ const createScoreTile = (score) => {
 // once score is ready, update the dom with the given list of scores
 const updateDomWithScore = (scores) => {
   const scoreListContainer = document.getElementById('score-list').getElementsByTagName('ul')[0];
+  const count = document.getElementsByClassName('count')[0];
+  count.innerHTML = scores.length + " ";
+  console.log(count);
   scoreListContainer.innerHTML = '';
   scores.forEach((score) => {
     const newScore = createScoreTile(score);
@@ -51,7 +53,7 @@ const updateDomWithScore = (scores) => {
   }
 };
 
-// events to trigger once once intial DOM content is loaded
+// events to trigger once once initial DOM content is loaded
 createInitialDom().then((domReady) => {
   if (domReady) {
     events.addNewScoreEvent(updateDomWithScore);
