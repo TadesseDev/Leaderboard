@@ -6,7 +6,7 @@ const initialPageContent = `    <div id="page-container">
       <section id="left">
         <h1 class="recent-score">
           Recent score
-          <button type="submit" id="refresh">Refresh</button>
+          <button type="submit" id="refresh"><span class="count">12 </span><span class="icon"><span></button>
         </h1>
         <div id="score-list">
           <ul>
