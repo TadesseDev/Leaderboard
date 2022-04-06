@@ -38,7 +38,7 @@ const createScoreTile = (score) => {
   return li;
 };
 
-//once score is ready, update the dom with the given list of scores
+// once score is ready, update the dom with the given list of scores
 const updateDomWithScore = (scores) => {
   const scoreListContainer = document.getElementById('score-list').getElementsByTagName('ul')[0];
   scoreListContainer.innerHTML = '';
@@ -51,8 +51,7 @@ const updateDomWithScore = (scores) => {
   }
 };
 
-
-//events to trigger once once intial DOM content is loaded
+// events to trigger once once intial DOM content is loaded
 createInitialDom().then((domReady) => {
   if (domReady) {
     events.addNewScoreEvent(updateDomWithScore);
