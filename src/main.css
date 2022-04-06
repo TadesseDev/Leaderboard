@@ -34,7 +34,7 @@ ul {
   align-items: flex-end;
 }
 
-#right form {
+#right #add-score {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
