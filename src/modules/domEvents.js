@@ -1,6 +1,6 @@
 import { getGameData, saveNewScore } from './API';
 
-// set add new scor form event
+// set add new score form event
 const addNewScoreEvent = () => {
   const addNewScore = document.getElementById('add-score');
   addNewScore.addEventListener('submit', (e) => {

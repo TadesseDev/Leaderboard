@@ -1,5 +1,6 @@
 import * as events from './domEvents';
 
+// body content as the template loaded
 const initialPageContent = `    <div id="page-container">
       <h1>LeaderBoard</h1>
       <section id="left">
@@ -23,7 +24,6 @@ const initialPageContent = `    <div id="page-container">
       </section>
     </div>`;
 const createInitialDom = () => {
-  // document.body.innerHTML = '';
   document.body.insertAdjacentHTML('beforebegin', initialPageContent);
   return Promise.resolve(true);
 };
@@ -38,6 +38,7 @@ const createScoreTile = (score) => {
   return li;
 };
 
+//once score is ready, update the dom with the given list of scores
 const updateDomWithScore = (scores) => {
   const scoreListContainer = document.getElementById('score-list').getElementsByTagName('ul')[0];
   scoreListContainer.innerHTML = '';
@@ -50,6 +51,8 @@ const updateDomWithScore = (scores) => {
   }
 };
 
+
+//events to trigger once once intial DOM content is loaded
 createInitialDom().then((domReady) => {
   if (domReady) {
     events.addNewScoreEvent(updateDomWithScore);
