@@ -1,4 +1,4 @@
-import { GAME_ID } from './GLOBALS';
+import { getGameId } from './GLOBALS';
 import { getGameData, saveNewScore } from './API.js';
 
 const addFromEvent = () => {
@@ -20,7 +20,9 @@ const addRefreshEvent = (updateDomWithScore) => {
   const refresh = document.getElementById('refresh');
   refresh.addEventListener('click', (e) => {
     e.preventDefault();
-    getGameData(GAME_ID).then((data) => updateDomWithScore(data.result)).catch((error) => { console.log('fail'); });
+    getGameData(getGameId())
+      .then((data) => updateDomWithScore(data.result))
+      .catch((error) => { console.log(error); });
   });
 };
 export { addFromEvent, addRefreshEvent };

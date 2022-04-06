@@ -1,20 +1,22 @@
-import { setGameId, getUrl } from './GLOBALS.js';
+import { getGameId, setGameId, getUrl } from './GLOBALS.js';
 
-const getGameData = async (gameId) => {
+const getGameData = async (gameId = getGameId()) => {
   try {
     const result = await fetch(
       getUrl(gameId), {
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
       },
-    },
     );
     if (result.ok) {
-      console.log(`game fatch with: ${gameId}`);
+      console.log(`game fatch withhh: ${getUrl(gameId)
+      }`);
       const data = await result.json();
       return data;
     }
+    return [];
   } catch (error) {
     return [];
   }
@@ -23,7 +25,6 @@ const getGameData = async (gameId) => {
 const initializeGame = async () => {
   if (localStorage.getItem('savedGame')) {
     return localStorage.getItem('savedGame');
-    console.log("getting sved game");
   }
   try {
     const result = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
@@ -37,20 +38,21 @@ const initializeGame = async () => {
       }),
     });
     if (result.ok) {
-      res.json().then((data) => {
+      result.json().then((data) => {
         const gameId = data.result.replaceAll('Game with ID:', '').replaceAll('added.', '').trim();
         setGameId(gameId);
-        localStorage.setItem('savedGame', String(GAME_ID));
-        resolve(GAME_ID);
+        localStorage.setItem('savedGame', String(getGameId()));
+        return getGameId();
       });
     }
+    return null;
   } catch (error) {
-    return null
+    return null;
   }
-}
+};
 
 const saveNewScore = (data) => {
-  fetch(getUrl(GAME_ID), {
+  fetch(getUrl(getGameId()), {
     method: 'POST',
     mode: 'cors',
     headers: { 'Content-type': 'application/json' },
