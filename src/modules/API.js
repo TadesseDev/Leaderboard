@@ -3,7 +3,7 @@ import { getGameId, setGameId, getUrl } from './GLOBALS.js';
 const getGameData = async (gameId = getGameId()) => {
   try {
     const result = await fetch(
-      getUrl(gameId), {
+      getUrl('tHhRUwU9PhkQBWkh4fwm'), {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ const initializeGame = async () => {
 };
 
 const saveNewScore = (data) => {
-  fetch(getUrl(getGameId()), {
+  fetch(getUrl('tHhRUwU9PhkQBWkh4fwm'), {
     method: 'POST',
     mode: 'cors',
     headers: { 'Content-type': 'application/json' },

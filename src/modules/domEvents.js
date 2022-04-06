@@ -20,7 +20,7 @@ const addRefreshEvent = (updateDomWithScore) => {
   const refresh = document.getElementById('refresh');
   refresh.addEventListener('click', (e) => {
     e.preventDefault();
-    getGameData(getGameId())
+    getGameData('tHhRUwU9PhkQBWkh4fwm')
       .then((data) => updateDomWithScore(data.result))
       .catch((error) => { console.log(error); });
   });
