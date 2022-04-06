@@ -1,5 +1,6 @@
 import { getGameData, saveNewScore } from './API.js';
 
+// set add new scor form event
 const addNewScoreEvent = () => {
   const addNewScore = document.getElementById('add-score');
   addNewScore.addEventListener('submit', (e) => {
@@ -15,6 +16,7 @@ const addNewScoreEvent = () => {
   });
 };
 
+// set the refresh button event
 const addRefreshEvent = (updateDomWithScore) => {
   const refresh = document.getElementById('refresh');
   refresh.addEventListener('click', (e) => {

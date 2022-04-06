@@ -16,8 +16,8 @@ const initialPageContent = `    <div id="page-container">
       <section id="right">
         <h1>Add your score</h1>
         <form action="#" method="post" id="add-score">
-          <input type="text" placeholder="Yor name" />
-          <input type="number" placeholder="Yor score" />
+          <input type="text" placeholder="Yor name" required/>
+          <input type="number" placeholder="Yor score" required/>
           <button type="submit" class="add-score">Submit</button>
         </form>
       </section>
