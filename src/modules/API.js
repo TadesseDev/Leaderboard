@@ -1,18 +1,23 @@
 import { GAME_ID, getFetchUrl, getPostUrl } from './GLOBALS';
 
+const sortScore = scores => {
+  scores.result.sort((score1, score2) => score1.score - score2.score);
+  return scores;
+}
+
 const getGameData = async () => {
   try {
     const result = await fetch(
       getFetchUrl(GAME_ID), {
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
       },
+    },
     );
     if (result.ok) {
       const data = await result.json();
-      return data;
+      return sortScore(data);
     }
     return { result: [] };
   } catch (error) {
