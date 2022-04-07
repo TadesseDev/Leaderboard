@@ -29,12 +29,13 @@ $gradient: linear-gradient(135deg, $dark 0%, $light2 48%, $dark 100%);
     margin: 0;
     padding: 2.5vw;
     height: max-content;
+    max-height: 40px;
     background: rgb(88, 3, 121);
     background: $gradient;
+    background-size: 200%;
     animation-name: slideColor;
-    animation-duration: 3s;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation-duration: 20s;
     color: $light;
     box-shadow: 0 10px 10px silver;
   }
@@ -194,62 +195,12 @@ footer {
 
 @keyframes slideColor {
   0% {
-    background-image:
-      linear-gradient(
-        135deg,
-        $dark 0%,
-        $light2 48%,
-        $dark 100%
-      );
+    background-position: right;
   }
-
-  20% {
-    background-image:
-      linear-gradient(
-        135deg,
-        $dark 0%,
-        $light2 58%,
-        $dark 110%
-      );
+  50% {
+    background-position: left;
   }
-
-  40% {
-    background-image:
-      linear-gradient(
-        135deg,
-        $dark 0%,
-        $light2 68%,
-        $dark 120%
-      );
-  }
-
-  60% {
-    background-image:
-      linear-gradient(
-        135deg,
-        $dark 0%,
-        $light2 78%,
-        $dark 130%
-      );
-  }
-
-  80% {
-    background-image:
-      linear-gradient(
-        135deg,
-        $dark 0%,
-        $light2 88%,
-        $dark 140%
-      );
-  }
-
-  90% {
-    background-image:
-      linear-gradient(
-        135deg,
-        $light2 0%,
-        $dark 48%,
-        $dark 140%
-      );
+  100% {
+    background-position: right;
   }
 }
