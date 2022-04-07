@@ -54,7 +54,7 @@ $gradient: linear-gradient(135deg, $dark 0%, $light2 48%, $dark 100%);
   max-height: 70vh;
   overflow: scroll;
   scrollbar-width: none;
-
+  box-shadow: 0 0 20px silver;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -164,6 +164,10 @@ $gradient: linear-gradient(135deg, $dark 0%, $light2 48%, $dark 100%);
     li {
       font-size: 1.1rem;
       color: white;
+      &:hover {
+        box-shadow: 0 0 20px #070707d2;
+        margin: 4px 0;
+      }
     }
   }
 
