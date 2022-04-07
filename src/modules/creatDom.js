@@ -21,8 +21,8 @@ const initialPageContent = `    <div id="page-container">
         </form>
       </section>
       <footer>
-      <h3> Lead Board project <h3>
-      <h5>By,Tadesse Alemayehu </h5>
+      <h3> Leader Board project <h3>
+      <h5>By, Tadesse Alemayehu </h5>
       </footer>
     </div>`;
 const createInitialDom = () => {
