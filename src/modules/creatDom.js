@@ -1,18 +1,9 @@
-import * as events from './domEvents';
-import { initialPageContent } from './GLOBALS.js'
-// body content as the template loaded
-const createInitialDom = () => {
-  document.body.insertAdjacentHTML('beforebegin', initialPageContent);
-  return Promise.resolve(true);
-};
+import { createInitialDom } from './GLOBALS.js'
+import { getGameData, saveNewScore } from './API';
 
-const createScoreTile = (score) => {
+const createSingleScoreCard = (score) => {
   const li = document.createElement('li');
-  li.innerHTML = ` 
-              <p>
-                <span class="name">${score.user}: </span> <span class="number">${score.score}</span>
-              </p>
-            `;
+  li.innerHTML = `<p><span class="name">${score.user}: </span> <span class="number">${score.score}</span></p>`;
   return li;
 };
 
@@ -24,7 +15,7 @@ const updateDomWithScore = (scores) => {
   count.innerHTML = `${scores.length} `;
   scoreList.classList.remove('loading');
   scores.forEach((score) => {
-    const newScore = createScoreTile(score);
+    const newScore = createSingleScoreCard(score);
     scoreListContainer.appendChild(newScore);
   });
   if (scoreListContainer.childNodes.length < 1) {
@@ -35,9 +26,28 @@ const updateDomWithScore = (scores) => {
 // events to trigger once once initial DOM content is loaded
 createInitialDom().then((domReady) => {
   if (domReady) {
-    events.addNewScoreEvent(updateDomWithScore);
-    events.addRefreshEvent(updateDomWithScore);
+    const addNewScore = document.getElementById('add-score');
+    addNewScore.addEventListener('submit', (e) => {
+      e.preventDefault();
+      saveNewScore({
+        user: e.target.elements[0].value,
+        score: e.target.elements[1].value,
+      });
+      e.target.elements[0].value = '';
+      e.target.elements[1].value = '';
+    });
+    const refresh = document.getElementById('refresh');
+    refresh.addEventListener('click', (e) => {
+      e.preventDefault();
+      const scoreList = document.getElementById('score-list');
+      const scoreListContainer = scoreList.getElementsByTagName('ul')[0];
+      scoreListContainer.innerHTML = '';
+      scoreList.classList.add('loading');
+      getGameData('tHhRUwU9PhkQBWkh4fwm')
+        .then((data) => updateDomWithScore(data.result))
+        .catch((error) => { console.log(error); });
+    });
   }
 });
 
-export { createInitialDom, updateDomWithScore };
+export { updateDomWithScore };
