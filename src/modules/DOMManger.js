@@ -1,6 +1,7 @@
 import { createInitialDom } from './GLOBALS.js'
 import { getGameData, saveNewScore } from './API';
 
+// Create and return a single card that can be added to the score list
 const createSingleScoreCard = (score) => {
   const li = document.createElement('li');
   li.innerHTML = `<p><span class="name">${score.user}: </span> <span class="number">${score.score}</span></p>`;

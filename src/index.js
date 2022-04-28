@@ -1,5 +1,5 @@
 import './main.scss';
-import { updateDomWithScore } from './modules/creatDom';
+import { updateDomWithScore } from './modules/DOMManger';
 import { getGameData } from './modules/API';
 
 getGameData().then((data) => updateDomWithScore(data.result))
