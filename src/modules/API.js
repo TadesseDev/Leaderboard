@@ -21,7 +21,7 @@ const getGameData = async () => {
     }
     return { result: [] };
   } catch (error) {
-    console.log('fant featch data', error);
+    console.log('cant fetch data', error);
     return { result: [] };
   }
 };
