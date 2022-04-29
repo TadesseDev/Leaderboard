@@ -7,24 +7,18 @@ const sortScore = scores => {
 
 const getGameData = async () => {
   try {
-    const result = await fetch(
-      getFetchUrl(GAME_ID), {
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    },
-    );
-    if (result.ok) {
+    const result = await fetch(getFetchUrl(GAME_ID), {mode: 'cors', headers: {'Content-Type': 'application/json',},},);
+    if (!result.ok)
+    throw new Error ('Result is not okay');
       const data = await result.json();
       return sortScore(data);
-    }
-    return { result: [] };
   } catch (error) {
     console.log('cant fetch data', error);
     return { result: [] };
   }
 };
+
+
 const saveNewScore = (data) => {
   fetch(getPostUrl(GAME_ID), {
     method: 'POST',
