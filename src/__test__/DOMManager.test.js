@@ -1,4 +1,4 @@
-const getFetchUrl = require('../modules/GLOBALS')
+import { getFetchUrl, getPostUrl, createInitialDom } from '../modules/GLOBALS'
 describe('check post and get urls', () => {
   test('get POST url passing an id', () => {
     const temID = 'test/123';
