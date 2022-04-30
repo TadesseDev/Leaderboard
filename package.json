@@ -10,7 +10,8 @@
     "start": "webpack serve --open",
     "fix-style": "npx stylelint \"**/*.{css,scss}\" --fix",
     "fix-script": "npx eslint . --fix",
-    "fix-hint": "npx hint ."
+    "fix-hint": "npx hint .",
+    "open-remote": "start www.github.com/tadesse-alemayehu/leaderboard"
   },
   "repository": {
     "type": "git",
