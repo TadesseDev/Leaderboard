@@ -29,4 +29,5 @@ const createInitialDom = () => {
     </div>`);
   return Promise.resolve(true);
 };
-export { GAME_ID, getFetchUrl, getPostUrl, createInitialDom };
+// export { GAME_ID, getFetchUrl, getPostUrl, createInitialDom };
+module.exports = getFetchUrl;
