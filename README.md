@@ -3,6 +3,7 @@
 > This is Leaderboard project.
 
 # Screenshot's
+
 ![leader board](https://user-images.githubusercontent.com/69077061/162072545-b8929b41-02bd-400b-a05d-07ace1a1fbe4.PNG)
 
 ## Built With
@@ -46,4 +47,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-Coming soon.
+LICENCED UNDER [MIT License](LICENSE)
