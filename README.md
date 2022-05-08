@@ -1,8 +1,9 @@
 # Leaderboard
 
-> This is Leaderboard project.
+> Leaderboard project involves fetching and storing game data to and from the server. for further processing books will be sotred to the local storage and used when ever there needed.
 
 # Screenshot's
+
 ![leader board](https://user-images.githubusercontent.com/69077061/162072545-b8929b41-02bd-400b-a05d-07ace1a1fbe4.PNG)
 
 ## Built With
