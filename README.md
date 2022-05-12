@@ -1,6 +1,6 @@
 # Leaderboard
 
-> Leaderboard project involves fetching and storing game data to and from the server. for further processing books will be sotred to the local storage and used when ever there needed.
+> The leaderboard project involves fetching and storing game data to and from the server. for further processing books will be stored in the local storage and used whenever they're needed.
 
 # Screenshot's
 
